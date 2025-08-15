@@ -3,12 +3,12 @@ import { redirect } from "next/navigation";
 import Quiz from "../quiz";
 
 type Props = {
-  params: {
-    lessonID: Promise<string>;
-  };
+  params: Promise<{
+    lessonID: string;
+  }>;
 };
 export default async function LessonIDPage({ params }: Props) {
-  const lessonData = getLesson(Number(await params.lessonID));
+  const lessonData = getLesson(Number((await params).lessonID));
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
 
