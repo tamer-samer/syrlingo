@@ -4,11 +4,11 @@ import Quiz from "../quiz";
 
 type Props = {
   params: {
-    lessonID: number;
+    lessonID: Promise<string>;
   };
 };
 export default async function LessonIDPage({ params }: Props) {
-  const lessonData = getLesson(params.lessonID);
+  const lessonData = getLesson(Number(await params.lessonID));
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
 
