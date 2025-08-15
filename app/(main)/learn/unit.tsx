@@ -17,8 +17,6 @@ type Props = {
 };
 
 const Unit = ({
-  id,
-  order,
   title,
   description,
   lessons,

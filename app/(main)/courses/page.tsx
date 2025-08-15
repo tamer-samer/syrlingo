@@ -1,10 +1,9 @@
-import { getCourses, getUnits, getUserProgress } from "@/db/queries";
+import { getCourses, getUserProgress } from "@/db/queries";
 import List from "./list";
 
 export default async function CoursesPage() {
   const coursesData = getCourses();
   const userProgressData = getUserProgress();
-  const units = await getUnits();
 
   const [courses, userProgress] = await Promise.all([
     coursesData,

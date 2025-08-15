@@ -18,7 +18,6 @@ type Props = {
   onClick: () => void;
 };
 const Card = ({
-  id,
   text,
   imageSrc,
   audioSrc,
